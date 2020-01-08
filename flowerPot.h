@@ -4,7 +4,7 @@
 
 #define VALVEOPEN HIGH
 #define VALVECLOSED LOW
-#define INTERVAL 30000 //Interval for measurement
+#define INTERVAL 3000 //Interval for measurement
 class flowerPot
 {
   public:

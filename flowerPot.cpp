@@ -21,7 +21,13 @@ flowerPot::flowerPot(int valve, int sensor, int threshold){
 }
 
 bool flowerPot::giveCare(){
-  return true;
+  unsigned int now = millis();
+  if(now - _timeStamp >= INTERVAL){
+    _moist = analogRead(_sensor);
+    _timeStamp = now;
+    Serial.println(_moist);
+  }
+  return false;
 }
 int flowerPot::getThreshold(){
   return _threshold;
